@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Table from '../components/Table';
 import TotalCases from '../components/TotalCases';
+import SearchBar from '../components/SearchBar';
 
 import covidsearcher from '../api/covidsearcher';
 
@@ -25,6 +26,8 @@ export default function Main() {
         <React.Fragment>
             <Header />
             <main>
+                <SearchBar />
+                
                 <TotalCases
                     confirmed={total === null ? null : parseInt(total.confirmed)}
                     deaths={total === null ? null : parseInt(total.deaths)}
@@ -39,7 +42,11 @@ export default function Main() {
 
             <footer className="footer">
                 <div className="container">
-                    <div>Ícones feitos por <a href="https://www.flaticon.com/br/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
+                    <div>
+                        <p>
+                            Ícones feitos por <a href="https://www.flaticon.com/br/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a>
+                        </p>
+                    </div>
                 </div>
             </footer>
         </React.Fragment>

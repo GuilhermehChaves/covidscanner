@@ -1,0 +1,19 @@
+.searchbar {
+    margin-top: 50px;
+    border: 1px solid #dddddd;
+    border-radius: 30px;
+    outline: none;
+    width: 100%;
+    height: 56px;
+    padding: 20px;
+}
+
+.searchbar__button {
+    padding: 32px 10px;
+    background: $header-bg;
+    color: white;
+    height: 64px;
+    width: 20%;
+    margin: 0;
+    border: 0;
+}
