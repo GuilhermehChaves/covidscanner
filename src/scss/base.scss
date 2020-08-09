@@ -1,0 +1,23 @@
+* {
+    font-family: "Poppins";
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+body {
+    margin: auto;
+}
+
+section:first-child {
+    margin-top: 90px;
+}

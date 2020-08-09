@@ -1,0 +1,25 @@
+.covid-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.covid-table__link {
+    text-decoration: none;
+    color: black;
+    &:hover {
+        color: $header-bg;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
