@@ -3,23 +3,26 @@ import { useParams } from "react-router-dom";
 
 import Header from '../components/Header';
 import TotalCases from '../components/TotalCases';
+import CountryTable from '../components/CountryTable';
 import covidsearcher from '../api/covidsearcher';
+
 
 export default function Country() {
     let { country } = useParams();
 
+    const [countryData, setCountryData] = useState();
     const [total, setTotal] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
             const totalResponse = await covidsearcher.get(`/v1/countries/${country}/total`);
+            const countryResponse = await covidsearcher.get(`/v1/countries/${country}/time`);
+
             setTotal(totalResponse.data);
+            setCountryData(countryResponse.data);
         }
         fetchData();
     }, []);
-
-
-    console.log(total);
 
     return (
         <React.Fragment>
@@ -33,7 +36,7 @@ export default function Country() {
 
                 <section className="statistics">
                     <div className="container">
-                        {country}
+                       <CountryTable countries={countryData}/>
                     </div>
                 </section>
             </main>
